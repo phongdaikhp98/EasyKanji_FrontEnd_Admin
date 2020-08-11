@@ -1,0 +1,63 @@
+<div class="animated fadeIn">
+  <div class="row justify-content-md-center">
+    <div class="col-sm-12 col-md-6">
+      <div class="card">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="form-group">
+                <label for="name">Tên tài khoản:</label>
+                <input disabled="disabled" class="form-control" [(ngModel)]="userModel.username" type="text">
+              </div>
+              <div class="form-group">
+                <label for="name">Ngày tạo:</label>
+                <input disabled="disabled" class="form-control" [(ngModel)]="userModel.createAt" type="text">
+              </div>
+              <div class="form-group">
+                <label for="name">Số dư:</label>
+                <input disabled="disabled" class="form-control" [(ngModel)]="userModel.money" type="text">
+              </div>
+              <div class="form-group">
+                <label for="name">Thay đổi số dư:</label>
+                <input class="form-control" [(ngModel)]="money" type="text">
+              </div>
+              <div class="row justify-content-end">
+                <div class="form-group">
+                  <button (click)="addMoney()" class="btn btn-primary">Cộng tiền</button>
+                  <button (click)="subMoney()" class="btn btn-danger">Trừ tiền</button>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="name">Đổi mật khẩu:</label>
+                <input class="form-control" [(ngModel)]="password" type="text">
+              </div>
+              <button type="button" class="btn btn-warning" data-toggle="modal" (click)="myModal.show()" >Đổi mật khẩu </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div bsModal #myModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Đổi mật khẩu</h4>
+        <button type="button" class="close" (click)="myModal.hide()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Chắc chắn đổi mật khẩu?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="myModal.hide()">Close</button>
+        <button type="button" class="btn btn-primary" (click)="changePassword()">Đổi</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
