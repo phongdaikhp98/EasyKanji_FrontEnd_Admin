@@ -147,13 +147,13 @@ export const navItemsUser: INavData[] = [
     icon: "icon-puzzle",
     children: [
       {
-        name: "Hóa đơn",
+        name: "User",
         url: "/users/test",
         icon: "icon-puzzle",
       },
       {
-        name: "Lịch sử thanh toán",
-        url: "/user/change-pwd",
+        name: "Kanji",
+        url: "/users/kanji",
         icon: "icon-puzzle",
       },
     ],

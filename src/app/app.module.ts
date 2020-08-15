@@ -52,6 +52,7 @@ import { ChangePasswordComponent } from './views/user/change-password/change-pas
 import { HistoryMoneyUserComponent } from './views/user/history-money/history-money.component';
 import { InforComponent } from './views/user/infor/infor.component';
 import { TestUserComponent } from './views/admin/users/test-user/test-user.component';
+import { EditKanjiComponent } from './views/admin/users/kanji/edit-kanji/edit-kanji.component';
 
 @NgModule({
   imports: [
@@ -87,7 +88,8 @@ import { TestUserComponent } from './views/admin/users/test-user/test-user.compo
     ChangePasswordComponent,
     HistoryMoneyUserComponent,
     InforComponent,
-    TestUserComponent
+    TestUserComponent,
+    EditKanjiComponent,
   ],
   providers: [
     {

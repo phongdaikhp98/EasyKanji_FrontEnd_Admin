@@ -17,6 +17,7 @@ import { HistoryMoneyComponent } from './views/admin/users/history-money/history
 import { ChangePasswordComponent } from './views/user/change-password/change-password.component';
 import { HistoryMoneyUserComponent } from './views/user/history-money/history-money.component';
 import { TestUserComponent } from './views/admin/users/test-user/test-user.component';
+import { EditKanjiComponent } from './views/admin/users/kanji/edit-kanji/edit-kanji.component';
 
 export const routes: Routes = [
   {
@@ -84,6 +85,13 @@ export const routes: Routes = [
       {
         path: "users/test",
         component: TestUserComponent,
+        data : {
+          title: "dfsdfsdf"
+        }
+      },
+      {
+        path: "users/kanji",
+        component: EditKanjiComponent,
         data : {
           title: "dfsdfsdf"
         }
