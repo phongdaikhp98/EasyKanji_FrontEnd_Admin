@@ -25,7 +25,7 @@ export class ListUserComponent implements OnInit {
   loadData() {
 
     this.userService.getAll(this.currentPage,this.itemsPerPage,this.search).subscribe((result) => {
-      if(result.message === RESPONSE_STATUS.SUCCESS) {
+      if(result.errorcode === RESPONSE_STATUS.SUCCESS) {
         this.list = result.body.content;
         this.totalItems = result.body.totalElements;
       }else {
@@ -42,7 +42,7 @@ export class ListUserComponent implements OnInit {
 
   disableUser(id: number): void {
     this.userService.changeDisableUser(id).subscribe((result) => {
-      if(result.message === RESPONSE_STATUS.SUCCESS) {
+      if(result.errorcode === RESPONSE_STATUS.SUCCESS) {
         this.alert.success('Sửa thành công');
         this.loadData();
       }else {

@@ -24,7 +24,7 @@ export class AddUserComponent implements OnInit {
       return;
     }
     this.userService.createUser(this.userModel).subscribe(result => {
-      if(result.message === RESPONSE_STATUS.SUCCESS) {
+      if(result.errorcode === RESPONSE_STATUS.SUCCESS) {
         this.alert.success('Thêm mới thành công');
         this.userModel = new UserCreateModel();
       }else {

@@ -29,7 +29,7 @@ export class EditUserComponent implements OnInit {
   getData() {
     this.userService.getInfoUser(this.id).subscribe(apiResponse => {
       console.log(apiResponse);
-      if(apiResponse.message === RESPONSE_STATUS.FAIL) {
+      if(apiResponse.errorcode === RESPONSE_STATUS.FAIL) {
 
       }else {
         this.userModel = apiResponse.body;
@@ -43,7 +43,7 @@ export class EditUserComponent implements OnInit {
        return;
      }
      this.userService.changePassword(this.id,this.password).subscribe(apiResponse => {
-       if(apiResponse.message === RESPONSE_STATUS.FAIL) {
+       if(apiResponse.errorcode === RESPONSE_STATUS.FAIL) {
          this.alert.danger('Có lỗi xảy ra');
        }else {
          this.alert.success('Đổi thành công');
@@ -54,7 +54,7 @@ export class EditUserComponent implements OnInit {
 
    addMoney() {
      this.userService.addMoney(this.id, this.money).subscribe(result => {
-       if(result.message === RESPONSE_STATUS.SUCCESS) {
+       if(result.errorcode === RESPONSE_STATUS.SUCCESS) {
          this.alert.success('Cập nhập thành công');
          this.money = 0;
          this.getData();
@@ -67,7 +67,7 @@ export class EditUserComponent implements OnInit {
 
    subMoney() {
     this.userService.subMoney(this.id, this.money).subscribe(result => {
-      if(result.message === RESPONSE_STATUS.SUCCESS) {
+      if(result.errorcode === RESPONSE_STATUS.SUCCESS) {
         this.alert.success('Cập nhập thành công');
         this.money = 0;
         this.getData();

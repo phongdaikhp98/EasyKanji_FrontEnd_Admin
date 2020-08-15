@@ -71,6 +71,24 @@ export const navItemsAdmin: INavData[] = [
       },
     ],
   },
+
+  {
+    name: "Test all user",
+    url: "/user",
+    icon: "icon-puzzle",
+    children: [
+      {
+        name: "Hóa đơn",
+        url: "/user/infor",
+        icon: "icon-puzzle",
+      },
+      {
+        name: "Lịch sử thanh toán",
+        url: "/user/change-pwd",
+        icon: "icon-puzzle",
+      },
+    ],
+  },
 ];
 
 export const navItemsUser: INavData[] = [
@@ -113,6 +131,24 @@ export const navItemsUser: INavData[] = [
       {
         name: "Hóa đơn",
         url: "/user/infor",
+        icon: "icon-puzzle",
+      },
+      {
+        name: "Lịch sử thanh toán",
+        url: "/user/change-pwd",
+        icon: "icon-puzzle",
+      },
+    ],
+  },
+
+  {
+    name: "Test all user",
+    url: "/user",
+    icon: "icon-puzzle",
+    children: [
+      {
+        name: "Hóa đơn",
+        url: "/users/test",
         icon: "icon-puzzle",
       },
       {

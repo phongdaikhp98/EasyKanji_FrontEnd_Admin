@@ -1,4 +1,5 @@
 export class ApiResponse  {
-    message: number;
+    errorcode: number;
+    message: string;
     body : any;
 }

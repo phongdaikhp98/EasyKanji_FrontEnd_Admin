@@ -19,7 +19,7 @@ export class ChangePasswordComponent implements OnInit {
   }
   changePasswordF() {
     this.userService.changePasswordUser(this.changePassword).subscribe(result =>{
-      if(result.message === RESPONSE_STATUS.SUCCESS) {
+      if(result.errorcode === RESPONSE_STATUS.SUCCESS) {
         this.alert.success('Đổi mật khẩu thành công');
         this.changePassword = new ChangePasswordModel();
       }else {

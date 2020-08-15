@@ -16,6 +16,7 @@ import { AddUserComponent } from './views/admin/users/add-user/add-user.componen
 import { HistoryMoneyComponent } from './views/admin/users/history-money/history-money.component';
 import { ChangePasswordComponent } from './views/user/change-password/change-password.component';
 import { HistoryMoneyUserComponent } from './views/user/history-money/history-money.component';
+import { TestUserComponent } from './views/admin/users/test-user/test-user.component';
 
 export const routes: Routes = [
   {
@@ -81,32 +82,10 @@ export const routes: Routes = [
         }
       },
       {
-        path: "users/history",
-        component: HistoryMoneyComponent,
+        path: "users/test",
+        component: TestUserComponent,
         data : {
-          title: "Lịch sử giao dịch"
-        }
-      },
-      {
-        path: "users/:id",
-        component: EditUserComponent,
-        data : {
-          title: "Thông tin chi tiết"
-        }
-      },
-      //user
-      {
-        path: "change-pwd",
-        component: ChangePasswordComponent,
-        data : {
-          title: "Đổi mật khẩu"
-        }
-      },
-      {
-        path: "history-money",
-        component: HistoryMoneyUserComponent,
-        data : {
-          title: "Lịch sử giao dịch"
+          title: "dfsdfsdf"
         }
       },
       {

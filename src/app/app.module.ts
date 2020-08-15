@@ -51,6 +51,7 @@ import { HistoryMoneyComponent } from './views/admin/users/history-money/history
 import { ChangePasswordComponent } from './views/user/change-password/change-password.component';
 import { HistoryMoneyUserComponent } from './views/user/history-money/history-money.component';
 import { InforComponent } from './views/user/infor/infor.component';
+import { TestUserComponent } from './views/admin/users/test-user/test-user.component';
 
 @NgModule({
   imports: [
@@ -86,6 +87,7 @@ import { InforComponent } from './views/user/infor/infor.component';
     ChangePasswordComponent,
     HistoryMoneyUserComponent,
     InforComponent,
+    TestUserComponent
   ],
   providers: [
     {

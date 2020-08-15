@@ -23,7 +23,7 @@ export class HistoryMoneyComponent implements OnInit {
 
   loadData() {
     this.historyService.getAll(this.currentPage,this.itemsPerPage,this.search).subscribe(result => {
-      if(result.message === RESPONSE_STATUS.SUCCESS) {
+      if(result.errorcode === RESPONSE_STATUS.SUCCESS) {
         this.list = result.body.content;
         this.totalItems = result.body.totalElements;
       }else {

@@ -23,7 +23,7 @@ export class LoginComponent {
     this.authenticationService
       .login(this.email, this.password)
       .subscribe((result: ApiResponse) => {
-        if (result.message === RESPONSE_STATUS.FAIL) {
+        if (result.errorcode === RESPONSE_STATUS.FAIL) {
           this.alertService.danger("Sai tài khoản mật khẩu");
           this.authenticationService.logout();
           return;

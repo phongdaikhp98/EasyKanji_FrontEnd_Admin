@@ -25,19 +25,18 @@ export class AuthenticationService {
   }
   login(username: string, password: string) {
     const profile = {
-      username: username,
+      email: username,
       password: password,
     };
-    return this.http.post<ApiResponse>(environment.apiUrl + "/login", profile).pipe(
+    return this.http.post<ApiResponse>(environment.apiUrl + "/auth/signinv2", profile).pipe(
       map((response) => {
         console.log(response);
         // login successful if there's a jwt token in the response
-        if (response.message === RESPONSE_STATUS.SUCCESS) {
+        if (response.errorcode === RESPONSE_STATUS.SUCCESS) {
           // store user details and jwt token in local storage to keep user logged in between page refreshes
           localStorage.setItem("currentUser", JSON.stringify(response.body));
           this.currentUserSubject.next(response.body);
         }
-
         return response;
       })
     );
