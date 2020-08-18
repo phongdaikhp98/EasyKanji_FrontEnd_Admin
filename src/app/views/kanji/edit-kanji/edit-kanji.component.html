@@ -1,0 +1,49 @@
+<div class="animated fadeIn">
+    <div class="row justify-content-md-center">
+      <div class="col-sm-12 col-md-6">
+        <div class="card">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="form-group">
+                  <label for="name">ID: </label>
+                  <input disabled="disabled"  class="form-control" [(ngModel)]="kanjiModel.id" type="text">
+                </div>
+                <div class="form-group">
+                  <label for="name">Kanji: </label>
+                  <input  class="form-control" [(ngModel)]="kanjiModel.kanji" type="text">
+                </div>
+                <div class="form-group">
+                  <label for="name">Kanji meaning: </label>
+                  <input  class="form-control" [(ngModel)]="kanjiModel.kanji_meaning" type="text">
+                </div>
+                <div class="form-group">
+                  <label for="name">Kun furigana: </label>
+                  <input  class="form-control" [(ngModel)]="kanjiModel.kun_furigana" type="text">
+                </div>
+                <div class="form-group">
+                    <label for="name">Kunyomi : </label>
+                    <input  class="form-control" [(ngModel)]="kanjiModel.kunyomi" type="text">
+                  </div>
+                <div class="form-group">
+                    <label for="name">On furigana: </label>
+                    <input  class="form-control" [(ngModel)]="kanjiModel.on_furigana" type="text">
+                  </div>
+                  <div class="form-group">
+                    <label for="name">Onyomi: </label>
+                    <input  class="form-control" [(ngModel)]="kanjiModel.onyomi" type="text">
+                  </div>
+                  <div class="form-group">
+                    <label for="name">Sino Vietnamese: </label>
+                    <input  class="form-control" [(ngModel)]="kanjiModel.sino_vietnamese" type="text">
+                  </div>
+                  <button (click)="updateKanji(kanjiModel)"  class="btn btn-primary" data-toggle="modal">Save</button>
+                  <a class="btn btn-primary" [routerLink]="[ '/list-kanji']">Cancel</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

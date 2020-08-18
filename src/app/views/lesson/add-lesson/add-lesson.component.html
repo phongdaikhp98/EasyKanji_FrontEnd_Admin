@@ -1,0 +1,23 @@
+<div class="animated fadeIn">
+    <div class="row justify-content-md-center">
+      <div class="col-sm-12 col-md-6">
+        <div class="card">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="form-group">
+                  <label for="name">Name:</label>
+                  <input class="form-control" [(ngModel)]="lessonModel.name" type="text">
+                </div>
+                <button type="button" (click)="createLesson()" class="btn btn-primary" data-toggle="modal">Add New
+                </button>
+                <a class="btn btn-primary" [routerLink]="[ '/list-lesson']">Cancel</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  

@@ -1,15 +1,11 @@
+
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { LocationStrategy, HashLocationStrategy } from "@angular/common";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 import { PerfectScrollbarModule } from "ngx-perfect-scrollbar";
-import { PERFECT_SCROLLBAR_CONFIG } from "ngx-perfect-scrollbar";
-import { PerfectScrollbarConfigInterface } from "ngx-perfect-scrollbar";
 
-const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
-  suppressScrollX: true,
-};
 
 import { AppComponent } from "./app.component";
 
@@ -42,17 +38,28 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from "@angular/common/http";
 import { JwtInterceptor } from "./auth/jwt.interceptor";
 import { ErrorInterceptor } from "./auth/error.interceptor";
 import { FormsModule } from '@angular/forms';
-import { ListUserComponent } from './views/admin/users/list-user/list-user.component';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
-import { EditUserComponent } from './views/admin/users/edit-user/edit-user.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
-import { AddUserComponent } from './views/admin/users/add-user/add-user.component';
-import { HistoryMoneyComponent } from './views/admin/users/history-money/history-money.component';
-import { ChangePasswordComponent } from './views/user/change-password/change-password.component';
-import { HistoryMoneyUserComponent } from './views/user/history-money/history-money.component';
-import { InforComponent } from './views/user/infor/infor.component';
-import { TestUserComponent } from './views/admin/users/test-user/test-user.component';
-import { EditKanjiComponent } from './views/admin/users/kanji/edit-kanji/edit-kanji.component';
+import { AddKanjiComponent } from './views/kanji/add-kanji/add-kanji.component';
+import { ListKanjiComponent } from './views/kanji/list-kanji/list-kanji.component';
+import { EditKanjiComponent } from './views/kanji/edit-kanji/edit-kanji.component';
+import { ListUserComponent } from './views/user/list-user/list-user.component';
+import { EditUserComponent } from './views/user/edit-user/edit-user.component';
+import { AddLessonComponent } from './views/lesson/add-lesson/add-lesson.component';
+import { ListLessonComponent } from './views/lesson/list-lesson/list-lesson.component';
+import { EditLessonComponent } from './views/lesson/edit-lesson/edit-lesson.component';
+import { ListVocabularyComponent } from './views/vocabulary/list-vocabulary/list-vocabulary.component';
+import { EditVocabularyComponent } from './views/vocabulary/edit-vocabulary/edit-vocabulary.component';
+import { AddVocabularyComponent } from './views/vocabulary/add-vocabulary/add-vocabulary.component';
+import { ListQuizWritingComponent } from './views/quizWriting/list-quiz-writing/list-quiz-writing.component';
+import { EditQuizWritingComponent } from './views/quizWriting/edit-quiz-writing/edit-quiz-writing.component';
+import { AddQuizWritingComponent } from './views/quizWriting/add-quiz-writing/add-quiz-writing.component';
+import { ListQuizMultipleComponent } from './views/quizMultiple/list-quiz-multiple/list-quiz-multiple.component';
+import { EditQuizMultipleComponent } from './views/quizMultiple/edit-quiz-multiple/edit-quiz-multiple.component';
+import { AddQuizMultipleComponent } from './views/quizMultiple/add-quiz-multiple/add-quiz-multiple.component';
+
+
+
 
 @NgModule({
   imports: [
@@ -81,15 +88,23 @@ import { EditKanjiComponent } from './views/admin/users/kanji/edit-kanji/edit-ka
     P500Component,
     LoginComponent,
     RegisterComponent,
+    AddKanjiComponent,
+    ListKanjiComponent,
+    EditKanjiComponent,
     ListUserComponent,
     EditUserComponent,
-    AddUserComponent,
-    HistoryMoneyComponent,
-    ChangePasswordComponent,
-    HistoryMoneyUserComponent,
-    InforComponent,
-    TestUserComponent,
-    EditKanjiComponent,
+    AddLessonComponent,
+    ListLessonComponent,
+    EditLessonComponent,
+    ListVocabularyComponent,
+    EditVocabularyComponent,
+    AddVocabularyComponent,
+    ListQuizWritingComponent,
+    EditQuizWritingComponent,
+    AddQuizWritingComponent,
+    ListQuizMultipleComponent,
+    EditQuizMultipleComponent,
+    AddQuizMultipleComponent,
   ],
   providers: [
     {

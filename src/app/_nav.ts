@@ -11,80 +11,98 @@ export const navItemsAdmin: INavData[] = [
     },
   },
   {
-    name: "Tài khoản",
+    name: "User Management",
     url: "/user",
     icon: "icon-puzzle",
     children: [
       {
-        name: "Thông tin tài khoản",
-        url: "/infor",
-        icon: "icon-puzzle",
-      },
-      {
-        name: "Đổi mật khẩu",
-        url: "/change-pwd",
-        icon: "icon-puzzle",
-      },
-      {
-        name: "Lịch sử giao dịch",
-        url: "/history-money",
+        name: "List User",
+        url: "/list-user",
         icon: "icon-puzzle",
       },
     ],
   },
   {
-    name: "Quản lí tài khoản",
-    url: "/users",
-    icon: "icon-layers",
+    name: "Kanji Management",
+    url: "/kanji",
+    icon: "icon-puzzle",
     children: [
       {
-        name: "Danh sách tài khoản",
-        url: "/users",
-        icon: "icon-people",
+        name: "List kanji",
+        url: "/list-kanji",
+        icon: "icon-puzzle",
       },
       {
-        name: "Thêm mới tài khoản",
-        url: "/users/create",
-        icon: "icon-user-follow",
-      },
-      {
-        name: "Lịch sử giao dịch",
-        url: "/users/history",
-        icon: "icon-notebook",
+        name: "Add kanji",
+        url: "/add-kanji",
+        icon: "icon-puzzle",
       },
     ],
   },
   {
-    name: "Tiện ích",
-    url: "/user",
+    name: "Lesson Management",
+    url: "/lesson",
     icon: "icon-puzzle",
     children: [
       {
-        name: "Hóa đơn",
-        url: "/user/infor",
+        name: "List lesson",
+        url: "/list-lesson",
         icon: "icon-puzzle",
       },
       {
-        name: "Lịch sử thanh toán",
-        url: "/user/change-pwd",
+        name: "Add lesson",
+        url: "/add-lesson",
         icon: "icon-puzzle",
       },
     ],
   },
-
   {
-    name: "Test all user",
-    url: "/user",
+    name: "Vocabulary Management",
+    url: "/vocabulary",
     icon: "icon-puzzle",
     children: [
       {
-        name: "Hóa đơn",
-        url: "/user/infor",
+        name: "List Vocabulary",
+        url: "/list-vocabulary",
         icon: "icon-puzzle",
       },
       {
-        name: "Lịch sử thanh toán",
-        url: "/user/change-pwd",
+        name: "Add Vocabulary",
+        url: "/add-vocabulary",
+        icon: "icon-puzzle",
+      },
+    ],
+  },
+  {
+    name: "Quiz Writing Management",
+    url: "/quiz-writing",
+    icon: "icon-puzzle",
+    children: [
+      {
+        name: "List Quiz Writing",
+        url: "/list-quiz-writing",
+        icon: "icon-puzzle",
+      },
+      {
+        name: "Add Quiz Writing",
+        url: "/add-quiz-writing",
+        icon: "icon-puzzle",
+      },
+    ],
+  },
+  {
+    name: "Quiz Multiple Management",
+    url: "/quiz-ultiple",
+    icon: "icon-puzzle",
+    children: [
+      {
+        name: "List Quiz Multiple",
+        url: "/list-quiz-multiple",
+        icon: "icon-puzzle",
+      },
+      {
+        name: "Add Quiz Multiple",
+        url: "/add-quiz-multiple",
         icon: "icon-puzzle",
       },
     ],
@@ -101,61 +119,101 @@ export const navItemsUser: INavData[] = [
       text: "NEW",
     },
   },
-  {
-    name: "Tài khoản",
-    url: "/user",
-    icon: "icon-puzzle",
-    children: [
-      {
-        name: "Thông tin tài khoản",
-        url: "/infor",
-        icon: "icon-puzzle",
-      },
-      {
-        name: "Đổi mật khẩu",
-        url: "/change-pwd",
-        icon: "icon-puzzle",
-      },
-      {
-        name: "Lịch sử giao dịch",
-        url: "/history-money",
-        icon: "icon-puzzle",
-      },
-    ],
-  },
-  {
-    name: "Tiện ích",
-    url: "/user",
-    icon: "icon-puzzle",
-    children: [
-      {
-        name: "Hóa đơn",
-        url: "/user/infor",
-        icon: "icon-puzzle",
-      },
-      {
-        name: "Lịch sử thanh toán",
-        url: "/user/change-pwd",
-        icon: "icon-puzzle",
-      },
-    ],
-  },
-
-  {
-    name: "Test all user",
-    url: "/user",
-    icon: "icon-puzzle",
-    children: [
-      {
-        name: "User",
-        url: "/users/test",
-        icon: "icon-puzzle",
-      },
-      {
-        name: "Kanji",
-        url: "/users/kanji",
-        icon: "icon-puzzle",
-      },
-    ],
-  },
+  // {
+  //   name: "User Management",
+  //   url: "/user",
+  //   icon: "icon-puzzle",
+  //   children: [
+  //     {
+  //       name: "List User",
+  //       url: "/list-user",
+  //       icon: "icon-puzzle",
+  //     },
+  //   ],
+  // },
+  // {
+  //   name: "Kanji Management",
+  //   url: "/kanji",
+  //   icon: "icon-puzzle",
+  //   children: [
+  //     {
+  //       name: "List kanji",
+  //       url: "/list-kanji",
+  //       icon: "icon-puzzle",
+  //     },
+  //     {
+  //       name: "Add kanji",
+  //       url: "/add-kanji",
+  //       icon: "icon-puzzle",
+  //     },
+  //   ],
+  // },
+  // {
+  //   name: "Lesson Management",
+  //   url: "/lesson",
+  //   icon: "icon-puzzle",
+  //   children: [
+  //     {
+  //       name: "List lesson",
+  //       url: "/list-lesson",
+  //       icon: "icon-puzzle",
+  //     },
+  //     {
+  //       name: "Add lesson",
+  //       url: "/add-lesson",
+  //       icon: "icon-puzzle",
+  //     },
+  //   ],
+  // },
+  // {
+  //   name: "Vocabulary Management",
+  //   url: "/vocabulary",
+  //   icon: "icon-puzzle",
+  //   children: [
+  //     {
+  //       name: "List Vocabulary",
+  //       url: "/list-vocabulary",
+  //       icon: "icon-puzzle",
+  //     },
+  //     {
+  //       name: "Add Vocabulary",
+  //       url: "/add-vocabulary",
+  //       icon: "icon-puzzle",
+  //     },
+  //   ],
+  // },
+  // {
+  //   name: "Quiz Writing Management",
+  //   url: "/quiz-writing",
+  //   icon: "icon-puzzle",
+  //   children: [
+  //     {
+  //       name: "List Quiz Writing",
+  //       url: "/list-quiz-writing",
+  //       icon: "icon-puzzle",
+  //     },
+  //     {
+  //       name: "Add Quiz Writing",
+  //       url: "/add-quiz-writing",
+  //       icon: "icon-puzzle",
+  //     },
+  //   ],
+  // },
+  // {
+  //   name: "Quiz Multiple Management",
+  //   url: "/quiz-ultiple",
+  //   icon: "icon-puzzle",
+  //   children: [
+  //     {
+  //       name: "List Quiz Multiple",
+  //       url: "/list-quiz-multiple",
+  //       icon: "icon-puzzle",
+  //     },
+  //     {
+  //       name: "Add Quiz Multiple",
+  //       url: "/add-quiz-multiple",
+  //       icon: "icon-puzzle",
+  //     },
+  //   ],
+  // },
 ];
