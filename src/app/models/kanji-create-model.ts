@@ -7,4 +7,5 @@ export class KanjiCreateModel {
     on_furigana: string;
     onyomi:string;
     sino_vietnamese:string;
+    lesson_id: number;
 }

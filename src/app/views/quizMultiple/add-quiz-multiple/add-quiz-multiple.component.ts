@@ -19,7 +19,12 @@ export class AddQuizMultipleComponent implements OnInit {
     this.quizMultipleModel = new QuizMultipleModel();
   }
 
-  createKanji() {
+  createQuizMultiple() {
+    if(this.quizMultipleModel.answerA == null || this.quizMultipleModel.answerB == null || this.quizMultipleModel.answerC == null
+      || this.quizMultipleModel.answerD == null || this.quizMultipleModel.correctAnswer == null || this.quizMultipleModel.question == null) {
+      this.alert.danger('Field cannot empty');
+      return;
+    }
 
     this.quizMultipleService.createQuizMultiple(this.quizMultipleModel).subscribe(result => {
       if(result.errorcode === RESPONSE_STATUS.SUCCESS) {

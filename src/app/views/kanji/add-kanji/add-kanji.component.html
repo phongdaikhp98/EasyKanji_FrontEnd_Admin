@@ -7,39 +7,43 @@
             <div class="col-sm-12">
               <div class="form-group">
                 <label for="name">Image:</label>
-                <input class="form-control" [(ngModel)]="kanjiModel.image" type="text">
+                <input class="form-control" [(ngModel)]="kanjiModel.image" type="text"  >
               </div>
               <div class="form-group">
                 <label for="name">Kanji:</label>
-                <input class="form-control" [(ngModel)]="kanjiModel.kanji" type="text">
+                <input class="form-control" [(ngModel)]="kanjiModel.kanji" type="text" required>  
               </div>
               <div class="form-group">
                 <label for="name">Sino Vietnamese:</label>
-                <input class="form-control" [(ngModel)]="kanjiModel.sino_vietnamese" type="text">
+                <input class="form-control" [(ngModel)]="kanjiModel.sino_vietnamese" type="text" required>
               </div>
               <div class="form-group">
                 <label for="name">Kanji Meaning:</label>
-                <input class="form-control" [(ngModel)]="kanjiModel.kanji_meaning" type="text">
+                <input class="form-control" [(ngModel)]="kanjiModel.kanji_meaning" type="text" required>
               </div>
               <div class="form-group">
                 <label for="name">Onyomi:</label>
-                <input class="form-control" [(ngModel)]="kanjiModel.onyomi" type="text">
+                <input class="form-control" [(ngModel)]="kanjiModel.onyomi" type="text" required>
               </div>
               <div class="form-group">
                 <label for="name">On Furigana:</label>
-                <input class="form-control" [(ngModel)]="kanjiModel.on_furigana" type="text">
+                <input class="form-control" [(ngModel)]="kanjiModel.on_furigana" type="text" required>
               </div>
               <div class="form-group">
                 <label for="name">Kunyomi:</label>
-                <input class="form-control" [(ngModel)]="kanjiModel.kunyomi" type="text">
+                <input class="form-control" [(ngModel)]="kanjiModel.kunyomi" type="text" required>
               </div>
               <div class="form-group">
                 <label for="name">Kun Furigana:</label>
-                <input class="form-control" [(ngModel)]="kanjiModel.kun_furigana" type="text">
+                <input class="form-control" [(ngModel)]="kanjiModel.kun_furigana" type="text" required>
+              </div>
+              <div class="form-group">
+                <label for="name">Lesson ID:</label>
+                <input class="form-control" [(ngModel)]="kanjiModel.lesson_id" type="text" required>
               </div>
               <button type="button" (click)="createKanji()" class="btn btn-primary" data-toggle="modal">Add New
               </button>
-              <a class="btn btn-primary" [routerLink]="[ '/list-kanji']">Cancel</a>
+              <button type="button"class="btn btn-primary" [routerLink]="[ '/list-kanji']">Cancel</button>
             </div>
           </div>
         </div>

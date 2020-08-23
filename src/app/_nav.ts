@@ -23,18 +23,18 @@ export const navItemsAdmin: INavData[] = [
     ],
   },
   {
-    name: "Kanji Management",
-    url: "/kanji",
+    name: "Level Management",
+    url: "/level",
     icon: "icon-puzzle",
     children: [
       {
-        name: "List kanji",
-        url: "/list-kanji",
+        name: "List level",
+        url: "/list-level",
         icon: "icon-puzzle",
       },
       {
-        name: "Add kanji",
-        url: "/add-kanji",
+        name: "Add level",
+        url: "/add-level",
         icon: "icon-puzzle",
       },
     ],
@@ -57,6 +57,23 @@ export const navItemsAdmin: INavData[] = [
     ],
   },
   {
+    name: "Kanji Management",
+    url: "/kanji",
+    icon: "icon-puzzle",
+    children: [
+      {
+        name: "List kanji",
+        url: "/list-kanji",
+        icon: "icon-puzzle",
+      },
+      {
+        name: "Add kanji",
+        url: "/add-kanji",
+        icon: "icon-puzzle",
+      },
+    ],
+  },
+  {
     name: "Vocabulary Management",
     url: "/vocabulary",
     icon: "icon-puzzle",
@@ -69,23 +86,6 @@ export const navItemsAdmin: INavData[] = [
       {
         name: "Add Vocabulary",
         url: "/add-vocabulary",
-        icon: "icon-puzzle",
-      },
-    ],
-  },
-  {
-    name: "Quiz Writing Management",
-    url: "/quiz-writing",
-    icon: "icon-puzzle",
-    children: [
-      {
-        name: "List Quiz Writing",
-        url: "/list-quiz-writing",
-        icon: "icon-puzzle",
-      },
-      {
-        name: "Add Quiz Writing",
-        url: "/add-quiz-writing",
         icon: "icon-puzzle",
       },
     ],

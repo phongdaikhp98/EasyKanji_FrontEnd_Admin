@@ -1,3 +1,4 @@
+import { ListLevelComponent } from './views/level/list-level/list-level.component';
 import { ListQuizMultipleComponent } from './views/quizMultiple/list-quiz-multiple/list-quiz-multiple.component';
 import { ListUserComponent } from './views/user/list-user/list-user.component';
 import { EditKanjiComponent } from './views/kanji/edit-kanji/edit-kanji.component';
@@ -20,11 +21,10 @@ import { EditLessonComponent } from './views/lesson/edit-lesson/edit-lesson.comp
 import { ListVocabularyComponent } from './views/vocabulary/list-vocabulary/list-vocabulary.component';
 import { AddVocabularyComponent } from './views/vocabulary/add-vocabulary/add-vocabulary.component';
 import { EditVocabularyComponent } from './views/vocabulary/edit-vocabulary/edit-vocabulary.component';
-import { ListQuizWritingComponent } from './views/quizWriting/list-quiz-writing/list-quiz-writing.component';
-import { AddQuizWritingComponent } from './views/quizWriting/add-quiz-writing/add-quiz-writing.component';
-import { EditQuizWritingComponent } from './views/quizWriting/edit-quiz-writing/edit-quiz-writing.component';
 import { AddQuizMultipleComponent } from './views/quizMultiple/add-quiz-multiple/add-quiz-multiple.component';
 import { EditQuizMultipleComponent } from './views/quizMultiple/edit-quiz-multiple/edit-quiz-multiple.component';
+import { AddLevelComponent } from './views/level/add-level/add-level.component';
+import { EditLevelComponent } from './views/level/edit-level/edit-level.component';
 
 
 
@@ -113,6 +113,27 @@ export const routes: Routes = [
         }
       },
       {
+        path: "list-level",
+        component: ListLevelComponent,
+        data : {
+          title: "List level"
+        }
+      },
+      {
+        path: "add-level",
+        component: AddLevelComponent,
+        data : {
+          title: "Add level"
+        }
+      },
+      {
+        path: "levels/:id",
+        component: EditLevelComponent,
+        data : {
+          title: "Edit level"
+        }
+      },
+      {
         path: "list-lesson",
         component: ListLessonComponent,
         data : {
@@ -152,27 +173,6 @@ export const routes: Routes = [
         component: EditVocabularyComponent,
         data : {
           title: "Edit Vocabulary"
-        }
-      },
-      {
-        path: "list-quiz-writing",
-        component: ListQuizWritingComponent,
-        data : {
-          title: "List Quiz Writing"
-        }
-      },
-      {
-        path: "add-quiz-writing",
-        component: AddQuizWritingComponent,
-        data : {
-          title: "Add Quiz Writing"
-        }
-      },
-      {
-        path: "quizzeswriting/:id",
-        component: EditQuizWritingComponent,
-        data : {
-          title: "Edit Quiz Writing"
         }
       },
       {

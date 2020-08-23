@@ -7,15 +7,15 @@
               <div class="col-sm-12">
                 <div class="form-group">
                   <label for="name">Name:</label>
-                  <input class="form-control" [(ngModel)]="lessonModel.name" type="text" required>
+                  <input class="form-control" [(ngModel)]="levelModel.name" type="text" required>
                 </div>
                 <div class="form-group">
-                  <label for="name">Level ID:</label>
-                  <input class="form-control" [(ngModel)]="lessonModel.level_id" type="text" required>
+                  <label for="name">Description:</label>
+                  <input class="form-control" [(ngModel)]="levelModel.description" type="text" required>
                 </div>
-                <button type="button" (click)="createLesson()" class="btn btn-primary" data-toggle="modal">Add New
+                <button type="button" (click)="createLevel()" class="btn btn-primary" data-toggle="modal">Add New
                 </button>
-                <button type="button"class="btn btn-primary" [routerLink]="[ '/list-lesson']">Cancel</button>
+                <a class="btn btn-primary" [routerLink]="[ '/list-level']">Cancel</a>
               </div>
             </div>
           </div>

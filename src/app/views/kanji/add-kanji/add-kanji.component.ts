@@ -19,6 +19,11 @@ export class AddKanjiComponent implements OnInit {
   }
 
   createKanji() {
+    if(this.kanjiModel.image == null || this.kanjiModel.kanji == null || this.kanjiModel.kanji_meaning == null
+       || this.kanjiModel.sino_vietnamese == null || this.kanjiModel.lesson_id == null) {
+      this.alert.danger('Field cannot empty');
+      return;
+    }
 
     this.kanjiService.createKanji(this.kanjiModel).subscribe(result => {
       if(result.errorcode === RESPONSE_STATUS.SUCCESS) {

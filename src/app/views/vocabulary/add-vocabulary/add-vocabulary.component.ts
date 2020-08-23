@@ -20,10 +20,15 @@ export class AddVocabularyComponent implements OnInit {
   }
 
   createVocabulary() {
+    if(this.vocabularyModel.hiragana == null || this.vocabularyModel.kanji_vocab == null 
+      || this.vocabularyModel.vocab_meaning == null || this.vocabularyModel.kanji_id == null) {
+      this.alert.danger('Field cannot empty');
+      return;
+    }
     this.vocabularyService.createVocabulary(this.vocabularyModel).subscribe(result => {
       if(result.errorcode === RESPONSE_STATUS.SUCCESS) {
-        this.vocabularyModel = new VocabularyModel();
         this.alert.success(result.message);
+        this.vocabularyModel = new VocabularyModel();   
       }else {
         this.alert.danger(result.message);
       }

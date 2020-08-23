@@ -45,6 +45,7 @@ export class ListLessonComponent implements OnInit {
     this.lessonService.deleteLesson(id).subscribe(response => {
       if (response.errorcode === RESPONSE_STATUS.SUCCESS) {
         this.alertService.success(response.message);
+        this.loadData();
       }else {
         this.alertService.danger(response.message);
       }

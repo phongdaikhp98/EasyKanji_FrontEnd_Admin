@@ -13,7 +13,7 @@
                   <label for="name">Name: </label>
                   <input  class="form-control" [(ngModel)]="lessonModel.name" type="text">
                 </div>
-                  <button (click)="updateLesson(lessonModel)"  class="btn btn-primary" data-toggle="modal">Save</button>
+                  <button (click)="updateLesson()"  class="btn btn-primary" data-toggle="modal">Save</button>
                   <a class="btn btn-primary" [routerLink]="[ '/list-lesson']">Cancel</a>
               </div>
             </div>

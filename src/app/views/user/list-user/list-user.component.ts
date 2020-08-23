@@ -27,6 +27,7 @@ export class ListUserComponent implements OnInit {
       {
         if(response.errorcode === RESPONSE_STATUS.SUCCESS) {
           this.list = response.body.content;
+          this.totalItems = response.body.totalElements;
           console.log(this.list);
         }else {
           this.alertService.danger(response.message);
@@ -37,6 +38,7 @@ export class ListUserComponent implements OnInit {
   pageChanged(event: any): void {
     console.log('Page changed to: ' + event.page);
     console.log('Number items per page: ' + event.itemsPerPage);
+    this.currentPage = event.page;
     this.loadData();
   }
 }

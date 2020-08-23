@@ -1,4 +1,5 @@
 export class LessonModel {
+    id:number;
     name: string;
-    level: number;
+    level_id: number;
 }

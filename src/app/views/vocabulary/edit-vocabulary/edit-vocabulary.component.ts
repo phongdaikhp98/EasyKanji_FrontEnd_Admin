@@ -34,7 +34,7 @@ export class EditVocabularyComponent implements OnInit {
     });
    }
 
-   updateKanji(){
+   updateVocabulary(){
     this.vocabularyService.updateVocabulary(this.id ,this.vocabularyModel).subscribe(apiResponse => {
       console.log(apiResponse);
       if(apiResponse.errorcode === RESPONSE_STATUS.FAIL) {

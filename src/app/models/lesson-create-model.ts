@@ -1,4 +1,4 @@
 export class LessonCreateModel {
     name: string;
-    level: number;
+    level_id: string;
 }

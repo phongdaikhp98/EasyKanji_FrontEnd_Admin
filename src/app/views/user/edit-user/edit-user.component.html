@@ -15,17 +15,17 @@
                 </div>
                 <div class="form-group">
                   <label for="name">Password: </label>
-                  <input  class="form-control" [(ngModel)]="userModel.password" type="text">
+                  <input disabled="disabled" class="form-control" [(ngModel)]="userModel.password" type="text">
                 </div>
                 <div class="form-group">
                   <label for="name">Username: </label>
-                  <input  class="form-control" [(ngModel)]="userModel.username" type="text">
+                  <input disabled="disabled" class="form-control" [(ngModel)]="userModel.username" type="text">
                 </div>
                 <div class="form-group">
                     <label for="name">Enabled: </label>
                     <input  class="form-control" [(ngModel)]="userModel.enabled" type="text">
                   </div>
-                  <button (click)="updateUser(userModel)"  class="btn btn-primary" data-toggle="modal">Save</button>
+                  <button (click)="updateUser()"  class="btn btn-primary" data-toggle="modal">Save</button>
                   <a class="btn btn-primary" [routerLink]="[ '/list-user']">Cancel</a>
               </div>
             </div>

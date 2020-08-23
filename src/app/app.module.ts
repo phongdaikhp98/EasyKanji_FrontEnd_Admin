@@ -51,12 +51,12 @@ import { EditLessonComponent } from './views/lesson/edit-lesson/edit-lesson.comp
 import { ListVocabularyComponent } from './views/vocabulary/list-vocabulary/list-vocabulary.component';
 import { EditVocabularyComponent } from './views/vocabulary/edit-vocabulary/edit-vocabulary.component';
 import { AddVocabularyComponent } from './views/vocabulary/add-vocabulary/add-vocabulary.component';
-import { ListQuizWritingComponent } from './views/quizWriting/list-quiz-writing/list-quiz-writing.component';
-import { EditQuizWritingComponent } from './views/quizWriting/edit-quiz-writing/edit-quiz-writing.component';
-import { AddQuizWritingComponent } from './views/quizWriting/add-quiz-writing/add-quiz-writing.component';
 import { ListQuizMultipleComponent } from './views/quizMultiple/list-quiz-multiple/list-quiz-multiple.component';
 import { EditQuizMultipleComponent } from './views/quizMultiple/edit-quiz-multiple/edit-quiz-multiple.component';
 import { AddQuizMultipleComponent } from './views/quizMultiple/add-quiz-multiple/add-quiz-multiple.component';
+import { ListLevelComponent } from './views/level/list-level/list-level.component';
+import { AddLevelComponent } from './views/level/add-level/add-level.component';
+import { EditLevelComponent } from './views/level/edit-level/edit-level.component';
 
 
 
@@ -99,12 +99,12 @@ import { AddQuizMultipleComponent } from './views/quizMultiple/add-quiz-multiple
     ListVocabularyComponent,
     EditVocabularyComponent,
     AddVocabularyComponent,
-    ListQuizWritingComponent,
-    EditQuizWritingComponent,
-    AddQuizWritingComponent,
     ListQuizMultipleComponent,
     EditQuizMultipleComponent,
     AddQuizMultipleComponent,
+    ListLevelComponent,
+    AddLevelComponent,
+    EditLevelComponent,
   ],
   providers: [
     {

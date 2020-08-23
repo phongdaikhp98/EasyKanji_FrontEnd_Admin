@@ -7,16 +7,20 @@
               <div class="col-sm-12">
                 <div class="form-group">
                   <label for="name">Kanji Vocab:</label>
-                  <input class="form-control" [(ngModel)]="vocabularyModel.kanji_vocab" type="text">
+                  <input class="form-control" [(ngModel)]="vocabularyModel.kanji_vocab" type="text" required>
                 </div>
                 <div class="form-group">
                   <label for="name">Hiragana:</label>
-                  <input class="form-control" [(ngModel)]="vocabularyModel.hiragana" type="text">
+                  <input class="form-control" [(ngModel)]="vocabularyModel.hiragana" type="text" required>
                 </div>
                 <div class="form-group">
                   <label for="name">Vocab Meaning:</label>
-                  <input class="form-control" [(ngModel)]="vocabularyModel.vocab_meaning" type="text">
-
+                  <input class="form-control" [(ngModel)]="vocabularyModel.vocab_meaning" type="text" required>
+                </div>
+                <div class="form-group">
+                  <label for="name">Kanji ID:</label>
+                  <input class="form-control" [(ngModel)]="vocabularyModel.kanji_id" type="text" required>
+                </div>
                 <button type="button" (click)="createVocabulary()" class="btn btn-primary" data-toggle="modal">Add New
                 </button>
                 <a class="btn btn-primary" [routerLink]="[ '/list-vocabulary']">Cancel</a>

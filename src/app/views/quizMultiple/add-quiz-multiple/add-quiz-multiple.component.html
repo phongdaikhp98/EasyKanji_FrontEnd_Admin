@@ -7,28 +7,27 @@
               <div class="col-sm-12">
                 <div class="form-group">
                   <label for="name">Question:</label>
-                  <input class="form-control" [(ngModel)]="quizMultipleModel.image" type="text">
+                  <input class="form-control" [(ngModel)]="quizMultipleModel.question" type="text" required>
                 </div>
                 <div class="form-group">
                   <label for="name">Answer A:</label>
-                  <input class="form-control" [(ngModel)]="quizMultipleModel.kanji" type="text">
+                  <input class="form-control" [(ngModel)]="quizMultipleModel.answerA" type="text" required>
                 </div>
                 <div class="form-group">
                   <label for="name">Answer B:</label>
-                  <input class="form-control" [(ngModel)]="quizMultipleModel.sino_vietnamese" type="text">
+                  <input class="form-control" [(ngModel)]="quizMultipleModel.answerB" type="text" required>
                 </div>
                 <div class="form-group">
                   <label for="name">Answer C:</label>
-                  <input class="form-control" [(ngModel)]="quizMultipleModel.kanji_meaning" type="text">
+                  <input class="form-control" [(ngModel)]="quizMultipleModel.answerC" type="text" required>
                 </div>
                 <div class="form-group">
                   <label for="name">Answer D:</label>
-                  <input class="form-control" [(ngModel)]="quizMultipleModel.onyomi" type="text">
+                  <input class="form-control" [(ngModel)]="quizMultipleModel.answerD" type="text" required>
                 </div>
                 <div class="form-group">
                   <label for="name">Correct Answer:</label>
-                  <input class="form-control" [(ngModel)]="quizMultipleModel.on_furigana" type="text">
-                </div>
+                  <input class="form-control" [(ngModel)]="quizMultipleModel.correctAnswer" type="text" required>
                 </div>
                 <button type="button" (click)="createQuizMultiple()" class="btn btn-primary" data-toggle="modal">Add New
                 </button>
