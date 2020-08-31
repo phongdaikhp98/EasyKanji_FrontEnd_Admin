@@ -20,7 +20,7 @@ export class AddLevelComponent implements OnInit {
   }
 
   createLevel() {
-    if(this.levelModel.name == null || this.levelModel.description == null ) {
+    if(!this.levelModel.name || !this.levelModel.description ) {
       this.alert.danger('Field cannot empty');
       return;
     }

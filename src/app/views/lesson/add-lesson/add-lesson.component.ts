@@ -21,14 +21,14 @@ export class AddLessonComponent implements OnInit {
   }
 
   createLesson() {
-    if(this.lessonModel.name === "" || this.lessonModel.level_id === "" ) {
+    if(!this.lessonModel.name || !this.lessonModel.level_id)  {
       this.alert.danger('Field cannot empty');
       return;
     }
     this.lessonService.createLesson(this.lessonModel).subscribe(result => {
       if(result.errorcode === RESPONSE_STATUS.SUCCESS) {
         this.alert.success(result.message);
-        this.lessonModel = new LessonCreateModel();
+        this.lessonModel;
       }else {
         this.alert.danger(result.message);
       }

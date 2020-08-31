@@ -2,7 +2,7 @@ import { RESPONSE_STATUS } from './../../../../environments/environment';
 import { Component, OnInit } from '@angular/core';
 import { VocabularyModel } from '../../../models/vocabulary-model';
 import { VocabularyService } from '../../../services/vocabulary.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AlertService } from 'ngx-alerts';
 
 @Component({
@@ -14,7 +14,7 @@ export class EditVocabularyComponent implements OnInit {
   id: number;
   vocabularyModel: VocabularyModel;
 
-  constructor(private vocabularyService : VocabularyService, private route: ActivatedRoute
+  constructor(private vocabularyService : VocabularyService, private route: ActivatedRoute, private router2: Router
     , private alert:AlertService) { }
 
   ngOnInit(): void {
@@ -35,6 +35,12 @@ export class EditVocabularyComponent implements OnInit {
    }
 
    updateVocabulary(){
+    if(!this.vocabularyModel.hiragana  || !this.vocabularyModel.kanji_vocab  
+      || !this.vocabularyModel.vocab_meaning  || !this.vocabularyModel.kanji_id ) {
+      this.alert.danger('Field cannot empty');
+      return;
+    }
+    
     this.vocabularyService.updateVocabulary(this.id ,this.vocabularyModel).subscribe(apiResponse => {
       console.log(apiResponse);
       if(apiResponse.errorcode === RESPONSE_STATUS.FAIL) {
@@ -42,6 +48,7 @@ export class EditVocabularyComponent implements OnInit {
       }else {
         this.vocabularyModel = new VocabularyModel();
         this.alert.success(apiResponse.message);
+        this.router2.navigate(["/list-vocabulary"]);
       }
     });
    }

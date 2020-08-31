@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { KanjiModel } from '../../../models/kanji-model';
 import { KanjiService } from '../../../services/kanji.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AlertService } from 'ngx-alerts';
 import { RESPONSE_STATUS } from '../../../../environments/environment';
 
@@ -14,7 +14,7 @@ export class EditKanjiComponent implements OnInit {
   id: number;
   kanjiModel: KanjiModel;
 
-  constructor(private kanjiService : KanjiService, private route: ActivatedRoute
+  constructor(private kanjiService : KanjiService, private route: ActivatedRoute, private router2: Router
     , private alert:AlertService) { }
 
   ngOnInit(): void {
@@ -35,6 +35,12 @@ export class EditKanjiComponent implements OnInit {
    }
 
    updateKanji(){
+    if(!this.kanjiModel.image  || !this.kanjiModel.kanji  || !this.kanjiModel.kanji_meaning 
+      || !this.kanjiModel.sino_vietnamese  || !this.kanjiModel.lesson_id ) {
+     this.alert.danger('Field cannot empty');
+     return;
+   }
+   
     this.kanjiService.updateKanji(this.id ,this.kanjiModel).subscribe(apiResponse => {
       console.log(apiResponse);
       if(apiResponse.errorcode === RESPONSE_STATUS.FAIL) {
@@ -42,6 +48,7 @@ export class EditKanjiComponent implements OnInit {
       }else {
         this.kanjiModel = new KanjiModel();
         this.alert.success(apiResponse.message);
+        this.router2.navigate(["/list-kanji"]);
       }
     });
    }

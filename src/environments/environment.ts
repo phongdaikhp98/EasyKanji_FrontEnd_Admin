@@ -5,7 +5,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://localhost:8081/api'
+  apiUrl: 'http://104.155.187.140:8081/api'
 };
 
 export const RESPONSE_STATUS = {

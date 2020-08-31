@@ -20,8 +20,9 @@ export class AddQuizMultipleComponent implements OnInit {
   }
 
   createQuizMultiple() {
-    if(this.quizMultipleModel.answerA == null || this.quizMultipleModel.answerB == null || this.quizMultipleModel.answerC == null
-      || this.quizMultipleModel.answerD == null || this.quizMultipleModel.correctAnswer == null || this.quizMultipleModel.question == null) {
+    if(!this.quizMultipleModel.answerA  || !this.quizMultipleModel.answerB  || !this.quizMultipleModel.answerC 
+      || !this.quizMultipleModel.answerD  || !this.quizMultipleModel.correctAnswer  || !this.quizMultipleModel.question 
+      || !this.quizMultipleModel.level_id || !this.quizMultipleModel.lesson_id ) {
       this.alert.danger('Field cannot empty');
       return;
     }

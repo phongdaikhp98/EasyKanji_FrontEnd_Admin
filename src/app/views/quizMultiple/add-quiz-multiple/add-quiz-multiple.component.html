@@ -29,9 +29,17 @@
                   <label for="name">Correct Answer:</label>
                   <input class="form-control" [(ngModel)]="quizMultipleModel.correctAnswer" type="text" required>
                 </div>
+                <div class="form-group">
+                  <label for="name">Level ID:</label>
+                  <input class="form-control" [(ngModel)]="quizMultipleModel.level_id" type="text" required>
+                </div>
+                <div class="form-group">
+                  <label for="name">Lesson ID:</label>
+                  <input class="form-control" [(ngModel)]="quizMultipleModel.lesson_id" type="text" required>
+                </div>
                 <button type="button" (click)="createQuizMultiple()" class="btn btn-primary" data-toggle="modal">Add New
                 </button>
-                <a class="btn btn-primary" [routerLink]="[ '/list-quiz-multiple']">Cancel</a>
+                <a class="btn btn-primary" [routerLink]="[ '/list-quiz-multiple']" class="marginleft-5">Cancel</a>
               </div>
             </div>
           </div>

@@ -31,7 +31,7 @@ import { EditLevelComponent } from './views/level/edit-level/edit-level.componen
 export const routes: Routes = [
   {
     path: "",
-    redirectTo: "dashboard",
+    redirectTo: "list-user",
     pathMatch: "full",
   },
   {
@@ -66,17 +66,17 @@ export const routes: Routes = [
     path: "",
     component: DefaultLayoutComponent,
     canActivate: [AuthGuard],
-    data: {
-      title: "Home",
-    },
+    // data: {
+    //   title: "Home",
+    // },
     children: [
-      {
-        path: "dashboard",
-        loadChildren: () =>
-          import("./views/dashboard/dashboard.module").then(
-            (m) => m.DashboardModule
-          ),
-      },
+      // {
+      //   path: "dashboard",
+      //   loadChildren: () =>
+      //     import("./views/dashboard/dashboard.module").then(
+      //       (m) => m.DashboardModule
+      //     ),
+      // },
       {
         path: "list-kanji",
         component: ListKanjiComponent,
@@ -95,7 +95,7 @@ export const routes: Routes = [
         path: "kanjis/:id",
         component: EditKanjiComponent,
         data : {
-          title: "Edit Kanji"
+          title: "Update Kanji"
         }
       },
       {
@@ -109,7 +109,7 @@ export const routes: Routes = [
         path: "users/:id",
         component: EditUserComponent,
         data : {
-          title: "Edit User"
+          title: "Update User"
         }
       },
       {
@@ -130,7 +130,7 @@ export const routes: Routes = [
         path: "levels/:id",
         component: EditLevelComponent,
         data : {
-          title: "Edit level"
+          title: "Update level"
         }
       },
       {
@@ -151,7 +151,7 @@ export const routes: Routes = [
         path: "lessons/:id",
         component: EditLessonComponent,
         data : {
-          title: "Edit Lesson"
+          title: "Update Lesson"
         }
       },
       {
@@ -172,7 +172,7 @@ export const routes: Routes = [
         path: "vocabularies/:id",
         component: EditVocabularyComponent,
         data : {
-          title: "Edit Vocabulary"
+          title: "Update Vocabulary"
         }
       },
       {
@@ -193,7 +193,7 @@ export const routes: Routes = [
         path: "quizzesmultiple/:id",
         component: EditQuizMultipleComponent,
         data : {
-          title: "Edit Quiz Multiple"
+          title: "Update Quiz Multiple"
         }
       },
       {

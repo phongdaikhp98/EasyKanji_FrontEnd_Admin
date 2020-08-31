@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LessonModel } from '../../../models/lesson-model';
 import { LessonService } from '../../../services/lesson.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AlertService } from 'ngx-alerts';
 import { RESPONSE_STATUS } from '../../../../environments/environment';
 
@@ -14,7 +14,7 @@ export class EditLessonComponent implements OnInit {
   id: number;
   lessonModel: LessonModel;
 
-  constructor(private lessonService : LessonService, private route: ActivatedRoute
+  constructor(private lessonService : LessonService, private route: ActivatedRoute, private router2: Router
     , private alert:AlertService) { }
 
   ngOnInit(): void {
@@ -35,6 +35,11 @@ export class EditLessonComponent implements OnInit {
    }
 
    updateLesson(){
+    if(!this.lessonModel.name || !this.lessonModel.level_id)  {
+      this.alert.danger('Field cannot empty');
+      return;
+    }
+    
     this.lessonService.updateLesson(this.id ,this.lessonModel).subscribe(apiResponse => {
       console.log(apiResponse);
       if(apiResponse.errorcode === RESPONSE_STATUS.FAIL) {
@@ -42,6 +47,7 @@ export class EditLessonComponent implements OnInit {
       }else {
         this.lessonModel = new LessonModel();
         this.alert.success(apiResponse.message);
+        this.router2.navigate(["/list-lesson"]);
       }
     });
    }

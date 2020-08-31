@@ -19,18 +19,28 @@ export class LoginComponent {
   ) {}
 
   loginFuntion() {
+    if(!this.email  || !this.password ) {
+     this.alertService.danger('Field cannot empty');
+     return;
+    }
+
+    if(this.password.length < 6 ) {
+      this.alertService.danger('Password require at least 6 characters ');
+      return;
+    }
+
     console.log(this.email + this.password);
     this.authenticationService
       .login(this.email, this.password)
       .subscribe((result: ApiResponse) => {
         if (result.errorcode === RESPONSE_STATUS.FAIL) {
-          this.alertService.danger("Sai tài khoản mật khẩu");
+          this.alertService.danger("Wrong username or password");
           this.authenticationService.logout();
           return;
         }
         if (result.body) {
           console.log(result);
-          this.alertService.success("Đăng nhập thành công");
+          this.alertService.success("Sign in successfully!");
           this.router.navigate(["/"]);
         }
       });

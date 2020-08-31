@@ -5,4 +5,6 @@ export class QuizMultipleCreateModel {
     answerC:string;
     answerD:string;
     correctAnswer:string;
+    level_id: number;
+    lesson_id: number;
 }

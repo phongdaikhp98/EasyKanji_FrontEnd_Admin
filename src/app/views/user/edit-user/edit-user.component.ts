@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserModel } from '../../../models/user-model';
 import { UserService } from '../../../services/user.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AlertService } from 'ngx-alerts';
 import { RESPONSE_STATUS } from '../../../../environments/environment';
 import { KanjiModel } from '../../../models/kanji-model';
@@ -16,7 +16,7 @@ export class EditUserComponent implements OnInit {
   id: number;
   userModel: UserModel;
 
-  constructor(private userService: UserService, private route: ActivatedRoute
+  constructor(private userService: UserService, private route: ActivatedRoute, private router2: Router
     , private alert:AlertService) { }
 
   ngOnInit(): void {
@@ -37,6 +37,10 @@ export class EditUserComponent implements OnInit {
    }
 
    updateUser(){
+    if(!this.userModel.enabled ) {
+      this.alert.danger('Field cannot empty');
+      return;
+    }
     this.userService.updateUser(this.id ,this.userModel).subscribe(apiResponse => {
       console.log(apiResponse);
       if(apiResponse.errorcode === RESPONSE_STATUS.FAIL) {
@@ -44,6 +48,7 @@ export class EditUserComponent implements OnInit {
       }else {
         this.userModel = new UserModel();
         this.alert.success(apiResponse.message);
+        this.router2.navigate(["/list-user"]);
       }
     });
    }

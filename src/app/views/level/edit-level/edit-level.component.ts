@@ -1,7 +1,7 @@
 import { LevelModel } from './../../../models/level-model';
 import { Component, OnInit } from '@angular/core';
 import { LevelService } from '../../../services/level.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AlertService } from 'ngx-alerts';
 import { RESPONSE_STATUS } from '../../../../environments/environment';
 
@@ -14,7 +14,7 @@ export class EditLevelComponent implements OnInit {
   id: number;
   levelModel: LevelModel;
 
-  constructor(private levelService: LevelService, private route: ActivatedRoute
+  constructor(private levelService: LevelService, private route: ActivatedRoute, private router2: Router
     , private alert:AlertService) { }
 
   ngOnInit(): void {
@@ -35,6 +35,11 @@ export class EditLevelComponent implements OnInit {
    }
 
    updateLevel(){
+    if(!this.levelModel.name || !this.levelModel.description ) {
+      this.alert.danger('Field cannot empty');
+      return;
+    }
+    
     this.levelService.updateLevel(this.id ,this.levelModel).subscribe(apiResponse => {
       console.log(apiResponse);
       if(apiResponse.errorcode === RESPONSE_STATUS.FAIL) {
@@ -42,6 +47,7 @@ export class EditLevelComponent implements OnInit {
       }else {
         this.levelModel = new LevelModel();
         this.alert.success(apiResponse.message);
+        this.router2.navigate(["/list-level"]);
       }
     });
    }

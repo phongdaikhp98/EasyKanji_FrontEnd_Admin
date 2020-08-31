@@ -20,8 +20,8 @@ export class AddVocabularyComponent implements OnInit {
   }
 
   createVocabulary() {
-    if(this.vocabularyModel.hiragana == null || this.vocabularyModel.kanji_vocab == null 
-      || this.vocabularyModel.vocab_meaning == null || this.vocabularyModel.kanji_id == null) {
+    if(!this.vocabularyModel.hiragana  || !this.vocabularyModel.kanji_vocab  
+      || !this.vocabularyModel.vocab_meaning  || !this.vocabularyModel.kanji_id ) {
       this.alert.danger('Field cannot empty');
       return;
     }
